@@ -2,7 +2,8 @@ const ring = document.querySelector("circle");
 var radius = ring.r.baseVal.value;
 var circumfrence = radius * 2 * Math.PI;
 ring.style.strokeDasharray = `${circumfrence} ${circumfrence}`;
-ring.style.strokeDashoffset = `${circumfrence}`;
+ring.style.strokeDashoffset = `${circumfrence}`
+
 var csec = 0
 
 let reMin = 0;

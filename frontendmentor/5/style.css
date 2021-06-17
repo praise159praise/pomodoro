@@ -12,7 +12,7 @@ body {
   justify-content: space-between;
 }
 .container{
-    height: 75vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -106,7 +106,10 @@ input{
     text-align: center;
     border: none;
     width: 40px;
-    border-bottom: 1px solid rgb(216, 64, 84);
+  
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.377),
+    -5px -5px 10px rgb(24, 23, 66), 
+    inset 6px 6px 5px 5px rgb(13 12 39), inset 0px 0px 0px 4px rgb(24, 23, 66);
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -127,7 +130,8 @@ input[type=number] {
     color: rgba(255, 255, 255, 0.35);
 }
 .actual-ring{
-   
+   stroke-dashoffset: 890.5984699568463;
+   stroke-dasharray: 890.5984699568463 890.5984699568463;
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
     font-size: 50px;
@@ -148,9 +152,4 @@ input[type=number] {
     width: 100px;
     height: 30px;
     background: red;
-}
-@media screen and (max-width:470px) {
-    .container{
-        height: 50%;
-    }
 }
