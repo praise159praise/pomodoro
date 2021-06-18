@@ -155,7 +155,7 @@ input[type=number] {
 }
 @media  screen and (max-width: 560px) {
     .container{
-        height: 80vh;
+        height: 60vh;
     }
     
 }
