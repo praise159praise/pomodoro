@@ -75,7 +75,7 @@ const setoffset = function (percent, node) {
     csec = 0
     secTotalTime = 0
     clean = true
-    clearTimeout(timer)
+    setoffset(psec, ring)
     console.log('lol')
 }
 let psec = 0
@@ -95,6 +95,7 @@ function start(i) {
     psec = (csec/secTotalTime) *100
     
     setoffset(psec, ring)
+    clean ? clearTimeout(timer) : null
         console.log(i,csec)
        }, 1000 * i);
     
