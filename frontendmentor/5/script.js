@@ -78,7 +78,7 @@ const setoffset = function (percent, node) {
 }
 let psec = 0
 function start(i) {
-  setTimeout(() => {
+ 
    
     csec = csec - 1;
     
@@ -95,15 +95,17 @@ function start(i) {
     setoffset(psec, ring)
   
     
-  }, 1000 * i);
+  
 }
 
 
 const soo = () => {
   for (let i = 0; csec > i; i++) {
-    start(i);
+     setTimeout(() => {
+        start(i);
     
-   console.log(i,csec)
+        console.log(i,csec)
+       }, 1000 * i);
     
   }
   
