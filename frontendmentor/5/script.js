@@ -75,12 +75,13 @@ const setoffset = function (percent, node) {
     csec = 0
     secTotalTime = 0
     clean = true
+    clearTimeout(timer)
     console.log('lol')
 }
 let psec = 0
 function start(i) { 
     for (let i = 0; csec > i; i++) {
-     setTimeout(() => {
+  const timer =   setTimeout(() => {
        csec = csec - 1;
        
      document.querySelector(".display1").innerText = Math.trunc(
