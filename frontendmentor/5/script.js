@@ -4,7 +4,7 @@ var circumfrence = radius * 2 * Math.PI;
 ring.style.strokeDasharray = `${circumfrence} ${circumfrence}`;
 ring.style.strokeDashoffset = `${circumfrence}`
 
-var csec = 0
+let csec = 0
 
 let reMin = 0;
 let reSec = 0;
