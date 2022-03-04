@@ -93,7 +93,7 @@ function start(i) {
     psec = (csec/secTotalTime) *100
     
     setoffset(psec, ring)
-  reset()
+  
     
   }, 1000 * i);
 }
