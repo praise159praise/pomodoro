@@ -77,12 +77,12 @@ const setoffset = function (percent, node) {
     console.log('lol')
 }
 let psec = 0
-function start(i) {
- 
-   
-    csec = csec - 1;
-    
-    document.querySelector(".display1").innerText = Math.trunc(
+function start(i) { 
+    for (let i = 0; csec > i; i++) {
+     setTimeout(() => {
+       csec = csec - 1;
+       
+     document.querySelector(".display1").innerText = Math.trunc(
       csec / 3600
     );
     reMin = csec % 3600;
@@ -93,6 +93,11 @@ function start(i) {
     psec = (csec/secTotalTime) *100
     
     setoffset(psec, ring)
+        console.log(i,csec)
+       }, 1000 * i);
+    
+  }
+  
   
     
   
@@ -100,15 +105,7 @@ function start(i) {
 
 
 const soo = () => {
-  for (let i = 0; csec > i; i++) {
-     setTimeout(() => {
-        start(i);
-    
-        console.log(i,csec)
-       }, 1000 * i);
-    
-  }
-  
+ start()
 };
 
 
