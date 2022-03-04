@@ -103,7 +103,7 @@ const soo = () => {
   for (let i = 0; csec > i; i++) {
     start(i);
     
-   
+   console.log(i,csec)
     
   }
   
