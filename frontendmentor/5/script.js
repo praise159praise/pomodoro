@@ -74,6 +74,7 @@ const setoffset = function (percent, node) {
     seconds.value =0
     // csec = 0
     clean = true
+    console.log('lol')
 }
 let psec = 0
 function start(i) {
