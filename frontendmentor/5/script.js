@@ -73,6 +73,7 @@ const setoffset = function (percent, node) {
     minutes.value =0
     seconds.value =0
     csec = 0
+    secTotalTime = 0
     clean = true
     console.log('lol')
 }
