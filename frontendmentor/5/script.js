@@ -6,6 +6,8 @@ ring.style.strokeDashoffset = `${circumfrence}`
 
 let csec = 0
 
+
+
 let reMin = 0;
 let reSec = 0;
 const time = document.querySelector(".time");
@@ -13,6 +15,14 @@ const test = document.querySelector(".testOutput");
 const hour = document.querySelector("#hour");
 const minutes = document.querySelector("#minutes");
 const seconds = document.querySelector("#seconds");
+const pause = document.querySelector('.pause')
+var paused = false
+
+pause.addEventListener('click', ()=>{
+  paused = !paused
+  start()
+})
+
 var secTotalTime = 0;
 
 hour.value = minutes.value = seconds.value = 00;
@@ -27,7 +37,7 @@ const maxValue = (node, max) => {
       parseInt(hour.value) * 3600 +
       parseInt(minutes.value) * 60 +
       parseInt(seconds.value);
-      csec = secTotalTime
+    csec = secTotalTime
     document.querySelector(".display1").innerText = Math.trunc(
       secTotalTime / 3600
     );
@@ -36,16 +46,16 @@ const maxValue = (node, max) => {
     document.querySelector(".display2").innerText = Math.trunc(reMin / 60);
     reSec = reMin % 60;
     document.querySelector(".display3").innerText = reSec;
-   
+
   });
 };
 
-const minValue = (node,min) =>{
-    node.addEventListener("input", function (e) {
-        if (parseInt(node.value) < min || isNaN(parseInt(node.value))) {
-          node.value = min;
-        }
-})
+const minValue = (node, min) => {
+  node.addEventListener("input", function (e) {
+    if (parseInt(node.value) < min || isNaN(parseInt(node.value))) {
+      node.value = min;
+    }
+  })
 }
 minValue(hour, 0);
 minValue(minutes, 0);
@@ -62,53 +72,60 @@ let updateText = (input, output) => {
 };
 
 const setoffset = function (percent, node) {
-    var offset = circumfrence - (percent / 100) * circumfrence;
-    node.style.strokeDashoffset = offset;
-  };
-  let clean = false
+  var offset = circumfrence - (percent / 100) * circumfrence;
+  node.style.strokeDashoffset = offset;
+};
+let clean = false
 
-  
-  const reset = () =>{
-    hour.value = 0;
-    minutes.value =0
-    seconds.value =0
-    csec = 0
-    secTotalTime = 0
-    clean = true
-    setoffset(psec, ring)
-    console.log('lol')
+
+const reset = () => {
+  hour.value = 0;
+  minutes.value = 0
+  seconds.value = 0
+  csec = 0
+  reMin = 0
+  reSec = 0
+
+  secTotalTime = 0
+  clean = true
+  setoffset(0, ring)
+  console.log('lol')
 }
 let psec = 0
-function start(i) { 
-    for (let i = 0; csec > i; i++) {
-  const timer =   setTimeout(() => {
-       csec = csec - 1;
-       
-     document.querySelector(".display1").innerText = Math.trunc(
-      csec / 3600
-    );
-    reMin = csec % 3600;
-   
-    document.querySelector(".display2").innerText = Math.trunc(reMin / 60);
-    reSec = reMin % 60;
-    document.querySelector(".display3").innerText = reSec;
-    psec = (csec/secTotalTime) *100
-    
-    setoffset(psec, ring)
-    clean ? clearTimeout(timer) : null
-        console.log(i,csec)
-       }, 1000 * i);
-    
-  }
-  
-  
-    
-  
+const updateClock = () =>{
+  document.querySelector(".display1").innerText = Math.trunc(
+    csec / 3600
+  ).toString().padStart(2, '0')
+  reMin = csec % 3600;
+
+  document.querySelector(".display2").innerText = Math.trunc(reMin / 60).toString().padStart(2, '0');
+  reSec = reMin % 60;
+  document.querySelector(".display3").innerText = reSec.toString().padStart(2, '0');
+  psec = (csec / secTotalTime) * 100
+
+  setoffset(psec, ring)
+  console.log(csec)
+  csec = csec - 1;
+}
+function start() {
+  csec > -1 && !paused ? updateClock() : null
+  var timer = setInterval(() => {
+
+    console.log(paused)
+    csec<0 || paused ? clearInterval(timer) : null
+    csec > -1 && !paused ? updateClock() : null
+
+
+  }, 1000);
+
+
+
+
 }
 
 
 const soo = () => {
- start()
+  start()
 };
 
 

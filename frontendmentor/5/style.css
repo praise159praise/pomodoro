@@ -57,13 +57,26 @@ display: block;
 
 .time{
     font-weight: 500;
-    font-size: 70px;
+    font-size: 50px;
     margin-bottom: 20px;
     padding-bottom: 15px;
 }
+
 .pause{
+    position: relative;
+    z-index: 100;
     letter-spacing: 15px;
     font-weight: 500;
+    background-color: rgb(216, 64, 84);
+    text-align: center;
+    padding: 5px 0;
+    padding-left: 15px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: .2s;
+    }
+.pause:hover{
+    background-color: rgb(156, 37, 53);
 }
 
 .title {
