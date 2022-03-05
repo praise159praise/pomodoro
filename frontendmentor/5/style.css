@@ -42,6 +42,7 @@ display: block;
 .clock{
     position: relative;
     width: 350px;
+    height: 350px;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
