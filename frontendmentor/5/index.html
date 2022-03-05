@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
     <style>
         @import "./style.css";
-       
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="title">
@@ -22,40 +25,33 @@
             <span>long break</span>
         </div>
         <div class="clock">
-            <svg
-    class="progress-ring"
-   
-    >
-        <circle
-        class="actual-ring"
-        stroke-width="12"
-        fill="transparent"
-        stroke="rgb(216, 64, 84)"
-        r="45%"
-        cx="50%"
-        cy="50%"
-        stroke-linecap="round"
-        >
+            <svg class="progress-ring">
+                <circle class="actual-ring" stroke-width="7" fill="transparent" stroke="rgb(216, 64, 84)" r="150px"
+                    cx="50%" cy="50%" stroke-linecap="round">
 
-        </circle>
-    </svg>
-   
-            <div class="time"><span class="display1">00</span>:<span class="display2">00</span>:<span class="display3">00</span></div>
+                </circle>
+            </svg>
+
+            <div class="time"><span class="display1">00</span>:<span class="display2">00</span>:<span
+                    class="display3">00</span></div>
             <div class="pause">PAUSE</div>
         </div>
         <div class="gear"><i class="fas fa-cog"></i>
             <div class="settings">
-                <input type="number" name="hour" id="hour" class="hour" min="0" max="23">:<input type="number" name="minutes" id="minutes" class="minutes" min="0" max="59">:<input type="number" name="seconds" id="seconds" class="seconds" min="0" max="59">
+                <input type="number" name="hour" id="hour" class="hour" min="0" max="23">:<input type="number"
+                    name="minutes" id="minutes" class="minutes" min="0" max="59">:<input type="number" name="seconds"
+                    id="seconds" class="seconds" min="0" max="59">
             </div>
             <div class="lower">
                 <div class="start" onclick="soo()"><i class="fas fa-play"></i></div>
                 <div class="reset" onclick="reset()"><i class="fas fa-undo"></i></div>
             </div>
-            </div>
+        </div>
     </div>
-   
-    
+
+
 
     <script src="./script.js"></script>
 </body>
+
 </html>
